@@ -13,10 +13,7 @@ Default Settings
 |:----------------------:|:-----------------:|
 |   `DISTRO_VERSION`     |      `xenial`     |
 |   `IMG_FILE`           | `/tmp/G4.img` (change this to yours) |
-|   `PRIV_MODE`          | `false` (set to `true` if `IMG_FILE` is a blkdev           |
+|   `PRIV_MODE`          | `false` (set to `true` if `IMG_FILE` is a blkdev |
 |   `NBD_PORT`           | `8520`            |
-
-
-If `IMG_FILE` is a block device, set `PRIV_MODE=true`.
 
 __author__: *tuan t. pham*
