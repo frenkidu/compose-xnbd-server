@@ -1,0 +1,22 @@
+---
+version: '3'
+services:
+  xnbd_server:
+    build:
+      context: ./build
+      args:
+        DISTRO_VERSION: ${DISTRO_VERSION}
+    image: neofob/xnbd_server:${DISTRO_VERSION}
+    container_name: xnbd_server
+    volumes:
+      - ${IMG_FILE}:/data/blockdev.img
+    # Use this instead of volume
+    # devices:
+    # - /dev/zram1:/data/blockdev.img
+    ports:
+      - "${NBD_PORT}:8520"
+    privileged: ${PRIV_MODE}
+    entrypoint:
+      - /usr/sbin/xnbd-server
+      - --target
+      - /data/blockdev.img
